@@ -1,11 +1,24 @@
+# IDE and environment folders
 .idea/
+.vscode/
 .venv/
 venv/
 __pycache__/
-gallery/
+
+# Compiled Python files
 *.pyc
 *.pyo
 *.pyd
+
+# Build artifacts
 build/
 dist/
 *.spec
+
+# Runtime generated data
+gallery/
+counter.txt
+
+# System files
+.DS_Store
+Thumbs.db

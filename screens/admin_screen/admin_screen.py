@@ -6,11 +6,14 @@ from kivy.uix.button import Button
 from kivy.uix.spinner import Spinner
 from kivy.core.window import Window
 from kivy.graphics import Color, Rectangle
+from screeninfo import get_monitors
 
 from config import MirrorSettings, PHOTOS_DIR
 
 
 class AdminScreen(Screen):
+    """Admin interface for configuring camera, orientation, and display."""
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -64,12 +67,32 @@ class AdminScreen(Screen):
 
         self.orientation_spinner = Spinner(
             text='Vertical',
-            values=['Vertical','Horizontal'],
+            values=['Vertical', 'Horizontal'],
             size_hint=(1, 0.08),
             font_size='18sp'
         )
         self.orientation_spinner.bind(text=self.on_orientation_selected)
         layout.add_widget(self.orientation_spinner)
+
+        screen_label = Label(
+            text='Display Output (MagicMirror)',
+            font_size='20sp',
+            size_hint=(1, 0.05),
+            color=(0.2, 0.2, 0.2, 1)
+        )
+        layout.add_widget(screen_label)
+
+        screens = get_monitors()
+        screen_options = [f"Screen {i + 1}" for i, _ in enumerate(screens)] or ["Screen 1"]
+
+        self.screen_spinner = Spinner(
+            text=f"Screen {MirrorSettings.selected_screen + 1}",
+            values=screen_options,
+            size_hint=(1, 0.08),
+            font_size='18sp'
+        )
+        self.screen_spinner.bind(text=self.on_screen_selected)
+        layout.add_widget(self.screen_spinner)
 
         photos_info = Label(
             text=f' Photos saved to:\n{PHOTOS_DIR}',
@@ -82,12 +105,14 @@ class AdminScreen(Screen):
         layout.add_widget(photos_info)
 
         exit_info = Label(
-            text='IMPORTANT: Press ESC to exit Magic Mirror mode\nor tap 3 times in top-left corner',
+            text='IMPORTANT:\n Press ESC to exit Magic Mirror mode or tap 5 times in top-left corner',
             font_size='18sp',
             size_hint=(1, 0.25),
-            color=(0.3, 0.3, 0.3, 1)
+            color=(0.3, 0.3, 0.3, 1),
+            halign='center',
+            valign='middle'
         )
-        exit_info.bind(size=exit_info.setter('text_size'))
+        exit_info.bind(size=lambda instance, value: setattr(instance, 'text_size', value))
         layout.add_widget(exit_info)
 
         layout.add_widget(Label(size_hint=(1, 0.31)))
@@ -105,17 +130,16 @@ class AdminScreen(Screen):
         self.add_widget(layout)
 
     def _update_bg(self, instance, value):
-        """Update background rectangle size"""
+        """Update background rectangle size."""
         self.bg_rect.size = instance.size
         self.bg_rect.pos = instance.pos
 
     def detect_cameras(self):
-        """Detect available cameras using OpenCV"""
+        """Detect available cameras using OpenCV."""
         available = []
 
         for i in range(5):
             cap = cv2.VideoCapture(i, cv2.CAP_DSHOW)
-
             if cap.isOpened():
                 available.append(i)
                 cap.release()
@@ -124,42 +148,63 @@ class AdminScreen(Screen):
 
         if not available:
             MirrorSettings.selected_camera = -1
-            print("⚠️ No cameras detected!")
+            print("No cameras detected.")
         elif MirrorSettings.selected_camera not in available:
             MirrorSettings.selected_camera = available[0]
 
-        print(f"✓ Detected cameras: {available}")
+        print(f"Detected cameras: {available}")
 
     def on_camera_selected(self, spinner, text):
-        """Callback when user selects a camera"""
+        """Handle camera selection from the spinner."""
         if "No cameras" in text:
             return
         try:
             camera_index = int(text.split()[-1])
             MirrorSettings.selected_camera = camera_index
-            print(f"✓ Camera selected: {camera_index}")
+            print(f"Camera selected: {camera_index}")
         except ValueError:
-            print("⚠️ Invalid camera selection")
+            print("Invalid camera selection.")
 
     def on_orientation_selected(self, spinner, text):
-        """Callback when user selects orientation"""
+        """Handle orientation change."""
         if "vertical" in text:
             MirrorSettings.orientation = "vertical"
         else:
             MirrorSettings.orientation = "horizontal"
 
         MirrorSettings.orientation = text.lower()
-        print(f"✓ Orientation set to: {MirrorSettings.orientation}")
+        print(f"Orientation set to: {MirrorSettings.orientation}")
+
+    def on_screen_selected(self, spinner, text):
+        """Handle screen selection from the spinner."""
+        try:
+            MirrorSettings.selected_screen = int(text.split()[-1]) - 1
+            print(f"Selected screen: {MirrorSettings.selected_screen}")
+        except Exception:
+            MirrorSettings.selected_screen = 0
+            print("Invalid screen selection.")
 
     def start_mirror(self, instance):
-        """Start the magic mirror"""
+        """Start Magic Mirror display on the selected screen."""
         if MirrorSettings.selected_camera == -1:
-            print("❌ Cannot start: No camera available")
+            print("Cannot start: No camera available.")
             return
 
-        Window.size = MirrorSettings.get_window_size()
-        print(f"✓ Window resized to: {Window.size}")
+        screens = get_monitors()
+        index = getattr(MirrorSettings, "selected_screen", 0)
 
+        if len(screens) > index:
+            screen = screens[index]
+            Window.left = screen.x
+            Window.top = screen.y
+            Window.size = (screen.width, screen.height)
+            Window.borderless = True
+            print(f"Opening Magic Mirror on Screen {index + 1}")
+        else:
+            Window.fullscreen = 'auto'
+            print("Fullscreen on main screen.")
+
+        print(f"Window resized to: {Window.size}")
         self.manager.current = 'start'
         print(f"Starting Magic Mirror with camera {MirrorSettings.selected_camera}")
         print(f"Orientation: {MirrorSettings.orientation}")
