@@ -132,7 +132,12 @@ class CameraScreen(Screen):
             photo_id = get_next_id()
             filename = f"photo_{photo_id}.png"
             filepath = PHOTOS_DIR / filename
-            cv2.imwrite(str(filepath), self.current_frame)
+            frame_to_save = self.current_frame
+
+            if MirrorSettings.orientation == "vertical":
+                frame_to_save = cv2.rotate(frame_to_save, cv2.ROTATE_90_CLOCKWISE)
+
+            cv2.imwrite(str(filepath), frame_to_save)
             print(f"Photo saved: {filepath}")
             print(f"Photo ID: {photo_id}")
             Clock.schedule_once(lambda dt: self.go_to_edit(str(filepath)), 0.3)
