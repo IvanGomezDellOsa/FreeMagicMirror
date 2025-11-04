@@ -1,0 +1,4 @@
+kivy==2.3.1
+opencv-python==4.10.0.84
+ffpyplayer==4.5.3
+screeninfo==0.8.1

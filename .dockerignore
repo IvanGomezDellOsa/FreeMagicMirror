@@ -1,0 +1,30 @@
+# Virtual environments
+.venv/
+venv/
+
+# IDE and workspace files
+.idea/
+.vscode/
+
+# Python cache and build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local runtime data
+gallery/
+counter.txt
+
+# Distribution / build artifacts
+build/
+dist/
+*.spec
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Git metadata
+.git/
+.gitignore

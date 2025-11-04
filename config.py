@@ -1,6 +1,12 @@
+import sys
 from pathlib import Path
 
-BASE_DIR = Path(__file__).parent.resolve()
+# Detect if running inside a PyInstaller
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys._MEIPASS)
+else:
+    BASE_DIR = Path(__file__).parent.resolve()
+
 ASSETS_DIR = BASE_DIR / "assets"
 VIDEOS_DIR = ASSETS_DIR / "videos"
 PHOTOS_DIR = BASE_DIR / "gallery"
