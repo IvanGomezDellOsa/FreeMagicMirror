@@ -109,8 +109,9 @@ class CameraScreen(Screen):
         """Start countdown before capturing a photo."""
         self.init_camera()
         Clock.schedule_interval(self.update_camera_frame, 1.0 / 10.0)
-        self.countdown_label.opacity = 1
         self.countdown_value = 5
+        self.countdown_label.text = str(self.countdown_value)
+        self.countdown_label.opacity = 1
         Clock.schedule_interval(self.update_countdown, 1.0)
 
     def update_countdown(self, dt):
