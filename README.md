@@ -1,4 +1,4 @@
-# FreeMagicMirror 📸
+# FreeMagicMirror
 
 Aplicación de escritorio en Python diseñada para pantallas tactiles como espejos inteligentes y fotomatones. Permite capturar fotos, personalizarlas con dibujos y stickers, y guardar los resultados.
 
