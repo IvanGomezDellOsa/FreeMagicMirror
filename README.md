@@ -134,6 +134,6 @@ docker run -it --rm --device=/dev/video0 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/
 
 **Iván Gómez Dell'Osa**
 
-- 🐙 **GitHub:** [https://github.com/IvanGomezDellOsa](https://github.com/IvanGomezDellOsa)
-- 📧 **Email:** ivangomezdellosa@gmail.com
-- 💼 **Linkedin:** [https://www.linkedin.com/in/ivangomezdellosa/](https://www.linkedin.com/in/ivangomezdellosa/)
+- GitHub: https://github.com/IvanGomezDellOsa
+- Email: ivangomezdellosa@gmail.com
+- Linkedin: https://www.linkedin.com/in/ivangomezdellosa/
