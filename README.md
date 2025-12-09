@@ -97,7 +97,7 @@ La forma más sencilla de utilizar FreeMagicMirror en Windows. No requiere insta
 3. Descomprime la carpeta y ejecuta `FreeMagicMirror.exe`.
 
 ### 🛠️ Opción 2: Código Fuente (Desarrolladores)
-Ideal si deseas inspeccionar el código o realizar modificaciones.
+Ideal para inspeccionar el código o realizar modificaciones.
 
 ```bash
 # 1. Clonar el repositorio
