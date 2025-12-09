@@ -35,10 +35,10 @@ Optimizada para pantallas táctiles de cualquier tamaño, soporta orientación v
 * **💾 Almacenamiento Local**
   Todas las fotos se guardan en carpeta gallery/ con contador incremental automático.
 
-## 🎬 Video Demostración
+## 🎬 Video Demostración (Click para ver)
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=V_Qmx1kqg2M">
+  <a href="https://www.youtube.com/watch?v=V_Qmx1kqg2M" target="_blank">
     <img src="https://img.youtube.com/vi/V_Qmx1kqg2M/maxresdefault.jpg" alt="Ver Demo de FreeMagicMirror" style="width:100%;">
   </a>
 </div>
