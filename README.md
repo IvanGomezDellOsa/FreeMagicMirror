@@ -1,6 +1,6 @@
 # FreeMagicMirror
 
-Aplicación de escritorio con **Python, Kivy, OpenCV y PyInstaller**, diseñada para pantallas tactiles como espejos inteligentes y fotomatones. Permite capturar fotos, personalizarlas con dibujos y stickers, y guardar los resultados.
+Aplicación de escritorio construida con **Python, Kivy, OpenCV y PyInstaller**, diseñada para pantallas tactiles como espejos inteligentes y fotomatones. Permite capturar fotos, personalizarlas con dibujos y stickers, y guardar los resultados.
 
  **Interfaz optimizada para uso infantil:** videos animados, transiciones suaves y controles grandes e intuitivos.
 
