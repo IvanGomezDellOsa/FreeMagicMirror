@@ -42,6 +42,13 @@ Optimizada para pantallas táctiles de cualquier tamaño, soporta orientación v
     <img src="https://img.youtube.com/vi/V_Qmx1kqg2M/maxresdefault.jpg" alt="Ver Demo de FreeMagicMirror" style="width:100%;">
   </a>
 </div>
+<br><br>
+<br><br>
+<p align="center">
+  <b>Desplegado en entorno real</b>
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/201c4995-becb-4142-9c6c-399b9c772439" width="300" alt="Niños usando FreeMagicMirror">
+</p>
 
 ## 🛠️ Datos Técnicos
 
