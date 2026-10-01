@@ -37,11 +37,11 @@ Optimized for touch screens of any size, it supports portrait and landscape orie
 * **💾 Local Storage**
   All photos are saved in the gallery/ folder with an automatic incremental counter.
 
-## 🎬 Demo Video (Click to watch)
+## 🎬 Presentation video (click to watch)
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=UjSz98p7nPk" target="_blank">
-    <img src="https://img.youtube.com/vi/UjSz98p7nPk/maxresdefault.jpg" alt="Ver Demo de FreeMagicMirror" style="width:100%;">
+    <img src="https://img.youtube.com/vi/UjSz98p7nPk/maxresdefault.jpg" alt="Presentation video of FreeMagicMirror" style="width:100%;">
   </a>
 </div>
 <br><br>
