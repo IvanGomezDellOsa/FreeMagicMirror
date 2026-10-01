@@ -40,8 +40,8 @@ Optimizada para pantallas táctiles de cualquier tamaño, soporta orientación v
 ## 🎬 Video Demostración (Click para ver)
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=V_Qmx1kqg2M" target="_blank">
-    <img src="https://img.youtube.com/vi/V_Qmx1kqg2M/maxresdefault.jpg" alt="Ver Demo de FreeMagicMirror" style="width:100%;">
+  <a href="https://www.youtube.com/watch?v=UjSz98p7nPk" target="_blank">
+    <img src="https://img.youtube.com/vi/UjSz98p7nPk/maxresdefault.jpg" alt="Ver Demo de FreeMagicMirror" style="width:100%;">
   </a>
 </div>
 <br><br>
