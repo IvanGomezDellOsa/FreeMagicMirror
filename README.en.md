@@ -110,7 +110,7 @@ Ideal for inspecting the code or making modifications.
 
 ```bash
 # 1. Clonar el repositorio
-git clone [https://github.com/IvanGomezDellOsa/FreeMagicMirror.git](https://github.com/IvanGomezDellOsa/FreeMagicMirror.git)
+git clone https://github.com/IvanGomezDellOsa/FreeMagicMirror.git
 cd FreeMagicMirror
 
 # 2. Crear entorno virtual e instalar dependencias
@@ -136,6 +136,7 @@ docker run -it --rm --device=/dev/video0 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/
 
 **Iván Gómez Dell'Osa**
 
+- Web: https://www.ivangomezdellosa.com.ar
 - GitHub: https://github.com/IvanGomezDellOsa
 - Email: ivangomezdellosa@gmail.com
 - Linkedin: https://www.linkedin.com/in/ivangomezdellosa/

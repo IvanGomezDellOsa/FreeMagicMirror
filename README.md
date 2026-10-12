@@ -2,7 +2,7 @@
 
 # FreeMagicMirror
 
-Aplicación de escritorio construida con **Python, Kivy, OpenCV y PyInstaller**, diseñada para pantallas tactiles como espejos inteligentes y fotomatones. Permite capturar fotos, personalizarlas con dibujos y stickers, y guardar los resultados.
+Aplicación de escritorio construida con **Python, Kivy, OpenCV y PyInstaller**, diseñada para pantallas táctiles como espejos inteligentes y fotomatones. Permite capturar fotos, personalizarlas con dibujos y stickers, y guardar los resultados.
 
  **Interfaz optimizada para uso infantil:** videos animados, transiciones suaves y controles grandes e intuitivos.
 
@@ -31,7 +31,7 @@ Optimizada para pantallas táctiles de cualquier tamaño, soporta orientación v
 * **📱 Soporte Multi-Orientación**
   Funciona perfectamente tanto en formato vertical como horizontal.
 
-* **🔒 Modo Kiosko**
+* **🔒 Modo Kiosco**
   Pantalla completa sin bordes, acceso admin solo mediante gestos secretos (5 toques en esquina).
 
 * **💾 Almacenamiento Local**
@@ -54,7 +54,7 @@ Optimizada para pantallas táctiles de cualquier tamaño, soporta orientación v
 
 ## 🛠️ Datos Técnicos
 
-Desarrollado en Python, combina la potencia de OpenCV para la gestión de hardware en tiempo real y el uso Kivy para una interfaz de usuario tactil, fluida y animada. Con empaquetado .exe implementado con PyInstaller y Dockerizacion del proyecto.
+Desarrollado en Python, combina la potencia de OpenCV para la gestión de hardware en tiempo real y el uso de Kivy para una interfaz de usuario táctil, fluida y animada. Con empaquetado .exe implementado con PyInstaller y Dockerización del proyecto.
 
 ### 💻 Stack Tecnológico
 
@@ -110,7 +110,7 @@ Ideal para inspeccionar el código o realizar modificaciones.
 
 ```bash
 # 1. Clonar el repositorio
-git clone [https://github.com/IvanGomezDellOsa/FreeMagicMirror.git](https://github.com/IvanGomezDellOsa/FreeMagicMirror.git)
+git clone https://github.com/IvanGomezDellOsa/FreeMagicMirror.git
 cd FreeMagicMirror
 
 # 2. Crear entorno virtual e instalar dependencias
@@ -136,6 +136,7 @@ docker run -it --rm --device=/dev/video0 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/
 
 **Iván Gómez Dell'Osa**
 
+- Web: https://www.ivangomezdellosa.com.ar
 - GitHub: https://github.com/IvanGomezDellOsa
 - Email: ivangomezdellosa@gmail.com
 - Linkedin: https://www.linkedin.com/in/ivangomezdellosa/
